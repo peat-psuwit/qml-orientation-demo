@@ -71,5 +71,8 @@ Thumbs.db
 *.dll
 *.exe
 
+# QTCreator environment settings
+*.user
+
 # clickable build directory
 /build/
