@@ -57,18 +57,25 @@ Page {
     }
 
     Flickable {
+        id: flickable
         clip: true
-        anchors.centerIn: parent
-        width: parent.width - 30
-        height: parent.height - 30
-        contentWidth: width
-        contentHeight: text.height
+        anchors.fill: parent
+
+        ScrollBar.vertical: ScrollBar {}
+
+        leftMargin: 15
+        rightMargin: 15
+        topMargin: 15
+        bottomMargin: 15
+        contentHeight: licenseTextView.height
 
         Text {
-            id: text
+            id: licenseTextView
 
             anchors.left: parent.left
             anchors.right: parent.right
+            // Why?
+            anchors.rightMargin: 30
             wrapMode: Text.WordWrap
 
             text: root.licenseText
