@@ -27,9 +27,11 @@ if(ANDROID)
     add_library(qml-orientation-demo SHARED main.cpp qml.qrc)
 else()
     add_executable(qml-orientation-demo main.cpp qml.qrc)
-    install(TARGETS qml-orientation-demo
-        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-    )
+    if(CLICK)
+        install(TARGETS qml-orientation-demo
+            RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+        )
+    endif()
 endif()
 
 target_compile_definitions(qml-orientation-demo
