@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=QML Camera
+Name=QML Orientation Demo
 Exec=qml-orientation-demo
 Icon=assets/logo.svg
 Terminal=false
