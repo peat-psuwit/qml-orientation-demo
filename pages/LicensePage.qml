@@ -30,59 +30,59 @@
 **
 ****************************************************************************/
 
-import QtQuick 2.2
-import QtQuick.Window 2.2
-import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.1
 
-import "../orientationHelper.js" as OrientationHelper
+import QtQuick 2.2
+import QtQuick.Controls 2.1
 
 Page {
     id: root
 
-    header: ToolBar {
-        Label {
-            text: "QML Orientation Demo"
-            font.pixelSize: 20
+    property string licenseText: "Loading..."
 
+    header: ToolBar {
+        ToolButton {
+            text: "Back"
+            anchors.left: parent.left
+            anchors.leftMargin: 10
+            anchors.verticalCenter: parent.verticalCenter
+            onClicked: root.StackView.view.pop()
+        }
+
+        Label {
+            id: pageTitle
+            text: "License"
+            font.pixelSize: 20
             anchors.centerIn: parent
         }
     }
 
-    ColumnLayout {
+    Flickable {
+        clip: true
         anchors.centerIn: parent
-
-        RowLayout {
-            Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-
-            Text {
-                id: orientationIntroText
-                text: "Current orientation: "
-                font.bold: true
-            }
-
-            Text {
-                id: orientationText
-                text: OrientationHelper.getOrientationStr(Screen.orientation) + " (" + Screen.orientation.toString(10) + ")";
-            }
-        }
+        width: parent.width - 30
+        height: parent.height - 30
+        contentWidth: width
+        contentHeight: text.height
 
         Text {
-            id: instructionText
-            text: "Rotate the screen to see difference"
+            id: text
 
-            Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
+            anchors.left: parent.left
+            anchors.right: parent.right
+            wrapMode: Text.WordWrap
+
+            text: root.licenseText
         }
+    }
 
-        Button {
-            id: licenseButton
-            text: "License"
-
-            Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-
-            onClicked: {
-                root.StackView.view.push("qrc:/pages/LicensePage.qml");
+    Component.onCompleted: {
+        var request = new XMLHttpRequest()
+        request.open('GET','qrc:/LICENSE')
+        request.onreadystatechange = function(event) {
+            if (request.readyState === XMLHttpRequest.DONE) {
+                licenseText = request.responseText;
             }
         }
+        request.send()
     }
 }

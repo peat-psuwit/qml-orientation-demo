@@ -3,5 +3,7 @@
         <file>main.qml</file>
         <file>orientationHelper.js</file>
         <file>pages/OrientationPage.qml</file>
+        <file>pages/LicensePage.qml</file>
+        <file>LICENSE</file>
     </qresource>
 </RCC>
