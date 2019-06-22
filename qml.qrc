@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>orientationHelper.js</file>
+        <file>pages/OrientationPage.qml</file>
     </qresource>
 </RCC>
