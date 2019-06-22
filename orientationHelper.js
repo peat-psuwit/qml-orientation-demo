@@ -1,6 +1,6 @@
 /****************************************************************************
 **
-** This code is modified from QT 4 example, which has the following license:
+** This code is modified from Qt 4 example, which has the following license:
 **
 ** Copyright (C) 2015 The Qt Company Ltd.
 ** Contact: http://www.qt.io/licensing/
