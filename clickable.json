@@ -1,0 +1,4 @@
+{
+  "template": "cmake",
+  "build_args": "-DCLICK=on"
+}

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=QML Camera
+Exec=qml-orientation-demo
+Icon=assets/logo.svg
+Terminal=false
+Type=Application
+X-Ubuntu-Touch=true
