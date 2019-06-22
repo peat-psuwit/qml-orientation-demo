@@ -38,6 +38,15 @@ import QtQuick.Controls 2.1
 import "../orientationHelper.js" as OrientationHelper
 
 Page {
+    header: ToolBar {
+        Label {
+            text: "QML Orientation Demo"
+            font.pixelSize: 20
+
+            anchors.centerIn: parent
+        }
+    }
+
     ColumnLayout {
         anchors.centerIn: parent
 
