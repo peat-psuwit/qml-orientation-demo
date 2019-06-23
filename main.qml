@@ -45,6 +45,16 @@ Window {
         initialItem: "qrc:/pages/OrientationPage.qml"
 
         anchors.fill: parent
+
+        Keys.onBackPressed: function (event) {
+            if (depth > 1) {
+                pop();
+                event.accepted = true;
+            }
+            else {
+                event.accepted = false;
+            }
+        }
     }
 
     Component.onCompleted: {
