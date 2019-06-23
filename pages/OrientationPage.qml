@@ -63,7 +63,7 @@ Page {
 
             Text {
                 id: orientationText
-                text: OrientationHelper.getOrientationStr(Screen.orientation) + " (" + Screen.orientation.toString(10) + ")";
+                text: "" // Will be updated in updateOrientationText()
             }
         }
 
@@ -75,14 +75,36 @@ Page {
         }
 
         Button {
+            id: manualUpdateButton
+            text: "Manually update orientation text"
+
+            Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
+
+            onClicked: {
+                updateOrientationText();
+            }
+        }
+
+        Button {
             id: licenseButton
             text: "License"
 
             Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
+            Layout.topMargin: 30
 
             onClicked: {
                 root.StackView.view.push("qrc:/pages/LicensePage.qml");
             }
         }
+    }
+
+    function updateOrientationText() {
+        console.log("updateOrientationText() called.");
+        orientationText.text = OrientationHelper.getOrientationStr(Screen.orientation) + " (" + Screen.orientation.toString(10) + ")";
+    }
+
+    Component.onCompleted: {
+        Screen.orientationChanged.connect(updateOrientationText);
+        updateOrientationText();
     }
 }
