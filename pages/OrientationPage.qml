@@ -67,6 +67,21 @@ Page {
             }
         }
 
+        RowLayout {
+            Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
+
+            Text {
+                id: primaryOrientationIntroText
+                text: "Current primaryOrientation: "
+                font.bold: true
+            }
+
+            Text {
+                id: primaryOrientationText
+                text: OrientationHelper.getOrientationStr(Screen.primaryOrientation) + " (" + Screen.primaryOrientation.toString(10) + ")";
+            }
+        }
+
         Text {
             id: instructionText
             text: "Rotate the screen to see difference"
