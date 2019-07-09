@@ -87,6 +87,19 @@ Page {
             Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
 
             Text {
+                text: "QScreen nativeOrientation: "
+                font.bold: true
+            }
+
+            Text {
+                text: OrientationHelper.getOrientationStr(orientationDemoNativeOrientation);
+            }
+        }
+
+        RowLayout {
+            Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
+
+            Text {
                 text: "OrientationSensor reading: "
                 font.bold: true
             }
@@ -102,6 +115,7 @@ Page {
             text: "Rotate the screen to see difference"
 
             Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
+            Layout.topMargin: 30
         }
 
         Button {
