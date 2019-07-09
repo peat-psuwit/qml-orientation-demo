@@ -13,7 +13,7 @@
             "desktop":  "qml-orientation-demo-not-rotated.desktop"
         }
     },
-    "version": "1.0.0",
+    "version": "1.1.0",
     "maintainer": "Ratchanan Srirattanamet <peat@peat-network.xyz>",
     "framework" : "ubuntu-sdk-16.04"
 }
