@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=X-Ubuntu-Rotates-Window-Contents
+Exec=qml-orientation-demo
+Icon=assets/logo.svg
+Terminal=false
+Type=Application
+X-Ubuntu-Touch=true
+X-Ubuntu-Rotates-Window-Contents=true

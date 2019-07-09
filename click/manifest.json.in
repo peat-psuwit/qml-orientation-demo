@@ -7,6 +7,10 @@
         "qml-orientation-demo": {
             "apparmor": "qml-orientation-demo.apparmor",
             "desktop":  "qml-orientation-demo.desktop"
+        },
+        "qml-orientation-demo-not-rotated": {
+            "apparmor": "qml-orientation-demo.apparmor",
+            "desktop":  "qml-orientation-demo-not-rotated.desktop"
         }
     },
     "version": "1.0.0",
