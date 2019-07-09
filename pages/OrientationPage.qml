@@ -34,6 +34,7 @@ import QtQuick 2.2
 import QtQuick.Window 2.2
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.1
+import QtSensors 5.9
 
 import "../orientationHelper.js" as OrientationHelper
 
@@ -82,6 +83,20 @@ Page {
             }
         }
 
+        RowLayout {
+            Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
+
+            Text {
+                text: "OrientationSensor reading: "
+                font.bold: true
+            }
+
+            Text {
+                id: orientationSensorText
+                text: 'Unavailable'
+            }
+        }
+
         Text {
             id: instructionText
             text: "Rotate the screen to see difference"
@@ -110,6 +125,15 @@ Page {
             onClicked: {
                 root.StackView.view.push("qrc:/pages/LicensePage.qml");
             }
+        }
+    }
+
+    OrientationSensor {
+        id: orientationSensor
+        active: true
+
+        onReadingChanged: {
+            orientationSensorText.text = OrientationHelper.getOrientationSensorReadingStr(reading.orientation) + " (" + reading.orientation.toString(10) + ")"
         }
     }
 

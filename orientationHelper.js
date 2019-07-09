@@ -42,6 +42,10 @@
 
 .pragma library
 
+.import QtSensors 5.9 as QtSensors
+
+var OrientationReading = QtSensors.OrientationReading;
+
 function getOrientationStr(orientation) {
     var orientationString;
     if (orientation === Qt.PortraitOrientation) {
@@ -58,5 +62,25 @@ function getOrientationStr(orientation) {
     return orientationString;
 }
 
+function getOrientationSensorReadingStr(orientation) {
+    switch (orientation) {
+    case OrientationReading.Undefined:
+        return 'Undefined';
+    case OrientationReading.TopUp:
+        return 'TopUp';
+    case OrientationReading.TopDown:
+        return 'TopDown';
+    case OrientationReading.LeftUp:
+        return 'LeftUp';
+    case OrientationReading.RightUp:
+        return 'RightUp';
+    case OrientationReading.FaceUp:
+        return 'FaceUp';
+    case OrientationReading.FaceDown:
+        return 'FaceDown';
+    default:
+        return '???';
+    }
+}
 
 
